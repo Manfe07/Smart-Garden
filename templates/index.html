@@ -3,13 +3,13 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-	<div class="div_content">
-		{% for place, data in clima.items() %}
-			<b>{{ place }}</b><br>
+	{% for place, data in clima.items() %}
+		<div class="div_content">
+			<h2>{{ place }}</h2>
 			{% for a, b in data.items() %}
 				<a>{{a}} : {{b}}</a><br>
 			{% endfor %}
 			<br>
-		{% endfor %}
-	</div>
+		</div>
+	{% endfor %}
 {% endblock %}
