@@ -3,13 +3,27 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block content %}
-	{% for place, data in clima.items() %}
-		<div class="div_content">
-			<h2>{{ place }}</h2>
+	<div class="div_content">
+		<h2>Sensoren</h2>
+		{% for place, data in clima.items() %}
+			<b>{{ place }}</b><br>
 			{% for a, b in data.items() %}
 				<a>{{a}} : {{b}}</a><br>
 			{% endfor %}
 			<br>
-		</div>
-	{% endfor %}
+		{% endfor %}
+	</div>
+	<div class="div_content">
+		<h2>Pumpen</h2>
+		{% for place, pump in pumps.items() %}
+			<b>{{ place }}:</b><br>
+			{% if pump["state"] %} Pumpe: EIN<br>
+			{% else %} Pumpe: AUS<br>
+			{% endif %}
+			{% if pump['level'] %}
+				<progress value="{{ pump['percent'] }}" max="100">{{ pump['percent']}} %</progress> ({{pump['level']}}cm)<br>
+			{% endif %}
+			<br>
+		{% endfor %}
+	</div>
 {% endblock %}
