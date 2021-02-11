@@ -4,6 +4,26 @@
 {% block title %}Home{% endblock %}
 {% block content %}
 	<div class="div_content">
-	Hier stehen dann die Werte
+		<h2>Sensoren</h2>
+		{% for place, data in clima.items() %}
+			<b>{{ place }}</b><br>
+			{% for a, b in data.items() %}
+				<a>{{a}} : {{b}}</a><br>
+			{% endfor %}
+			<br>
+		{% endfor %}
+	</div>
+	<div class="div_content">
+		<h2>Pumpen</h2>
+		{% for place, pump in pumps.items() %}
+			<b>{{ place }}:</b><br>
+			{% if pump["state"] %} Pumpe: EIN<br>
+			{% else %} Pumpe: AUS<br>
+			{% endif %}
+			{% if pump['level'] %}
+				<progress value="{{ pump['percent'] }}" max="100">{{ pump['percent']}} %</progress> ({{pump['level']}}cm)<br>
+			{% endif %}
+			<br>
+		{% endfor %}
 	</div>
 {% endblock %}
