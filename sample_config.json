@@ -5,5 +5,11 @@
     "user": "",
     "passwd": "",
     "baseTopic": "SmartGarden"
+  },
+  "influxdb": {
+    "hostname": "localhost",
+    "port": 8086,
+    "user": "user",
+    "passwd": "password"
   }
 }
