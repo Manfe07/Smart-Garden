@@ -1,6 +1,7 @@
 {
   "mqtt": {
     "hostname": "localhost",
+    "port": 1883,
     "user": "",
     "passwd": "",
     "baseTopic": "SmartGarden"
