@@ -1,0 +1,8 @@
+{
+  "mqtt": {
+    "hostname": "localhost",
+    "user": "",
+    "passwd": "",
+    "baseTopic": "SmartGarden"
+  }
+}

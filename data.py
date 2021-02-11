@@ -1,4 +1,10 @@
 import json
+import paho.mqtt.client as mqtt
+
+
+with open("config.json") as json_data_file:
+    config = json.load(json_data_file)
+
 def getSensors():
     json_data={
         "Gemüsebeet":{
